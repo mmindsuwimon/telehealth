@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
   }
 }
 
@@ -25,3 +25,37 @@ body {
     text-wrap: balance;
   }
 }
+
+ .ant-input ,input:placeholder-shown  {
+  font-size: 12px !important;
+}
+
+
+.icon {
+  /* background-color: red; */
+  /* stroke-width: 2; */
+  font-weight: 600;
+}
+
+ .ant-form-item-label{
+  /* padding:0 0 2px; */
+}
+.ant-tabs-tabpane{
+  margin: 0
+}
+
+.ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select{
+  width: 100%;
+  height: 100%;
+}
+
+.ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector{
+  border-radius: 8px;
+  height: 34px;
+}
+
+.ant-picker-outlined{
+  border-radius: 8px;
+  height: 34px;
+}
+

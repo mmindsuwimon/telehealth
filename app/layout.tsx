@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "./components/layouts/navbar";
+import PageWrapper from "./components/layouts/pageWrapper";
+import Header from "./components/layouts/header";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +31,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        {children}
+        <main className="flex w-full ">
+          <Navbar />
+          <div className="w-full py-3 px-4 max-h-screen overflow-y-scroll">
+            <Header />
+            <Suspense fallback={<Loading />}>
+              <PageWrapper>{children}</PageWrapper>
+            </Suspense>
+          </div>
+        </main>
       </body>
     </html>
   );
